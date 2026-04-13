@@ -1,0 +1,525 @@
+.page {
+  background: #f0f5fb;
+  min-height: 100%;
+}
+
+/* ── Header ── */
+.header {
+  background: linear-gradient(135deg, #0a1628 0%, #1e3a5f 100%);
+  color: #ffffff;
+  padding: 40px 40px 36px;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 6px;
+}
+
+.subtitle {
+  font-size: 15px;
+  color: #a0bcd8;
+}
+
+/* ── Workspace ── */
+.workspace {
+  display: flex;
+  gap: 24px;
+  padding: 28px 40px 40px;
+  align-items: flex-start;
+}
+
+/* ── Control Panel ── */
+.controlPanel {
+  background: #ffffff;
+  border: 1px solid #dde6f0;
+  border-radius: 10px;
+  padding: 24px 20px;
+  width: 250px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #0a1628;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.seqInput {
+  font-family: "Courier New", monospace;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  padding: 8px 12px;
+  border: 1px solid #c4d4e4;
+  border-radius: 6px;
+  background: #f8fbff;
+  color: #0a1628;
+  outline: none;
+  text-transform: uppercase;
+  transition: border-color 0.15s;
+}
+
+.seqInput:focus {
+  border-color: #1e3a5f;
+}
+
+.scoringBox {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px;
+  background: #f0f5fb;
+  border-radius: 8px;
+  border: 1px solid #dde6f0;
+}
+
+.scoringTitle {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #5a7090;
+  margin-bottom: 2px;
+}
+
+.scoringRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.scoringLabel {
+  font-size: 12px;
+  color: #3a5070;
+}
+
+.scoreInput {
+  width: 60px;
+  padding: 4px 8px;
+  border: 1px solid #c4d4e4;
+  border-radius: 5px;
+  font-size: 13px;
+  text-align: center;
+  color: #0a1628;
+  background: #ffffff;
+  outline: none;
+}
+
+.scoreInput:focus {
+  border-color: #1e3a5f;
+}
+
+.error {
+  font-size: 12px;
+  color: #b91c1c;
+  background: #fef2f2;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #fecaca;
+  line-height: 1.5;
+}
+
+.runBtn {
+  background: #0a1628;
+  color: #ffffff;
+  border: none;
+  border-radius: 7px;
+  padding: 11px 0;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  letter-spacing: 0.02em;
+  transition: background 0.15s;
+}
+
+.runBtn:hover {
+  background: #1e3a5f;
+}
+
+.resetBtn {
+  background: #b91c1c;
+  color: #ffffff;
+  border: none;
+  border-radius: 7px;
+  padding: 11px 0;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  letter-spacing: 0.02em;
+  transition: background 0.15s;
+}
+
+.resetBtn:hover {
+  background: #991b1b;
+}
+
+.stepInfo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.stepCount {
+  font-size: 12px;
+  color: #5a7090;
+  font-variant-numeric: tabular-nums;
+}
+
+.phaseTag {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 20px;
+  background: #dde6f0;
+  color: #1e3a5f;
+  white-space: nowrap;
+}
+
+.phaseTag[data-phase="traceback"] {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.navBtns {
+  display: flex;
+  gap: 8px;
+}
+
+.navBtn {
+  flex: 1;
+  background: #f0f5fb;
+  border: 1px solid #c4d4e4;
+  border-radius: 6px;
+  padding: 8px 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: #0a1628;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.navBtn:hover:not(:disabled) {
+  background: #dde6f0;
+}
+
+.navBtn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.description {
+  font-size: 13px;
+  color: #3a5070;
+  line-height: 1.7;
+  min-height: 80px;
+  padding: 10px 12px;
+  background: #f8fbff;
+  border-radius: 7px;
+  border: 1px solid #dde6f0;
+}
+
+/* ── Matrix Panel ── */
+.matrixPanel {
+  flex: 1;
+  background: #ffffff;
+  border: 1px solid #dde6f0;
+  border-radius: 10px;
+  padding: 28px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.placeholder {
+  color: #8aaccc;
+  font-size: 15px;
+  text-align: center;
+  padding: 80px 20px;
+  line-height: 1.6;
+}
+
+/* ── Emission table ── */
+.emitSection {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.emitTitle {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: #5a7090;
+}
+
+.emitTable {
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.emitHdr {
+  padding: 4px 14px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 700;
+  color: #5a7090;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid #dde6f0;
+}
+
+.emitStateCell {
+  padding: 5px 14px;
+  font-family: "Courier New", monospace;
+  font-weight: 700;
+  font-size: 14px;
+  text-align: center;
+  border-radius: 4px;
+}
+
+.islandCell {
+  color: #065f46;
+  background: #d1fae5;
+}
+
+.bgCell {
+  color: #1e3a5f;
+  background: #dde6f0;
+}
+
+.emitValCell {
+  padding: 5px 14px;
+  text-align: center;
+  color: #3a5070;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── Viterbi DP Table ── */
+.matrixScroll {
+  overflow-x: auto;
+}
+
+.matrix {
+  border-collapse: collapse;
+}
+
+.hCell {
+  min-width: 52px;
+  height: 36px;
+  text-align: center;
+  font-family: "Courier New", monospace;
+  font-weight: 700;
+  font-size: 13px;
+  color: #0a1628;
+  padding: 0 4px;
+  user-select: none;
+  line-height: 1.3;
+}
+
+.posNum {
+  font-size: 10px;
+  color: #8aaccc;
+  font-weight: 400;
+}
+
+.baseChar {
+  font-size: 14px;
+  font-weight: 700;
+  color: #0a1628;
+}
+
+.stateHdr {
+  min-width: 52px;
+  height: 44px;
+  text-align: center;
+  font-family: "Courier New", monospace;
+  font-weight: 700;
+  font-size: 18px;
+  padding: 0 8px;
+  user-select: none;
+}
+
+.islandHdr {
+  color: #065f46;
+  background: #f0fdf8;
+}
+
+.bgHdr {
+  color: #1e3a5f;
+  background: #f0f5fb;
+}
+
+.cell {
+  min-width: 52px;
+  height: 44px;
+  text-align: center;
+  border: 1px solid #dde6f0;
+  font-size: 12px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  font-family: "Courier New", monospace;
+  transition: background 0.12s, color 0.12s;
+}
+
+.cellHidden {
+  background: #eef3f8;
+  color: transparent;
+}
+
+.cellRevealed {
+  background: #ffffff;
+  color: #0a1628;
+}
+
+.cellCurrent {
+  background: #1e3a5f;
+  color: #ffffff;
+  font-weight: 700;
+  box-shadow: inset 0 0 0 2px #4a90d9;
+}
+
+.cellTraceback {
+  background: #065f46;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+/* ── Result Box ── */
+.resultBox {
+  background: #f0f5fb;
+  border: 1px solid #dde6f0;
+  border-radius: 8px;
+  padding: 20px 24px;
+}
+
+.resultTitle {
+  font-size: 14px;
+  font-weight: 700;
+  color: #0a1628;
+  margin-bottom: 14px;
+}
+
+.pathGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.pathCol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.pathBase {
+  font-family: "Courier New", monospace;
+  font-size: 15px;
+  font-weight: 700;
+  color: #0a1628;
+}
+
+.pathState {
+  font-family: "Courier New", monospace;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 2px 5px;
+  border-radius: 4px;
+  min-width: 22px;
+  text-align: center;
+}
+
+.pathIsland {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.pathBg {
+  background: #dde6f0;
+  color: #1e3a5f;
+}
+
+.resultNote {
+  font-size: 12px;
+  color: #5a7090;
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.islandDot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  background: #065f46;
+}
+
+.bgDot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  background: #1e3a5f;
+}
+
+/* ── Legend ── */
+.legend {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: #5a7090;
+}
+
+.swatch {
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+  border: 1px solid #c4d4e4;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.swCurrent {
+  background: #1e3a5f;
+  border-color: #1e3a5f;
+}
+
+.swRevealed {
+  background: #ffffff;
+}
+
+.swTraceback {
+  background: #065f46;
+  border-color: #065f46;
+}
+
+.swHidden {
+  background: #eef3f8;
+}
